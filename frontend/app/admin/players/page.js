@@ -69,6 +69,12 @@ const CreatePlayerPage = () => {
     const [rating, setRating] = useState("")
     const [basePrice, setBasePrice] = useState("")
 
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
 
     const fetchPlayers = async () => {
         try {
@@ -294,7 +300,7 @@ const CreatePlayerPage = () => {
                                     <TableCell>{player.rating}</TableCell>
                                     <TableCell>{player.basePrice}</TableCell>
                                     <TableCell className="text-right flex items-center justify-end">{player.isSold ? "Sold" : <ButtonGroup className="dark">
-                                        <Button variant="outline" size="sm"><Link href={"/admin/auction"}>Sell</Link></Button>
+                                        <Button variant="outline" size="sm"><Link href={`/admin/auction?playerId=${player._id}`}>Sell</Link></Button>
                                         <Button variant="destructive" size="sm" onClick={() => { handleDeletePlayer(player._id) }}>Delete</Button>
                                     </ButtonGroup>}</TableCell>
                                 </TableRow>

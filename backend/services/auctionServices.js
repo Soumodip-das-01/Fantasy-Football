@@ -33,9 +33,13 @@ export const sellPlayerToTeam = async({playerId, teamId, soldPrice})=>{
     team.purse -= soldPrice,
     team.teamRating += player.rating
 
+    await team.save()
+
     player.isSold = true
     player.soldPrice = soldPrice
     player.soldTo = team._id
+
+    await player.save()
 
     return{
         team,
