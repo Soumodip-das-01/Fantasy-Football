@@ -4,6 +4,7 @@ import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
+import { toast } from "sonner"
 import { Label } from '@/components/ui/label'
 import {
     Select,
@@ -155,6 +156,7 @@ const AuctionPage = () => {
             setPrice("")
             fetchPlayers()
             fetchTeams()
+            toast(`Player Sold to Successfully`)
         } catch (err) {
             setMessage(err.message)
         } finally {

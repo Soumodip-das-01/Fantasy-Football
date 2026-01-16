@@ -73,4 +73,20 @@ router.delete("/players/:id", async(req, res)=>{
     }
 })
 
+router.delete("/teams/:id", async(req, res)=>{
+    try{
+        const {id} = req.params
+        const deletedTeam = await Team.findByIdAndDelete(id)
+
+        if(!deletedTeam){
+            return res.status(404).json({error: "team not found"})
+        }
+
+        return res.status(200).json({message: "Team deleted succesfully"})
+    }catch(err){
+        console.error(err)
+        res.status(500).json({error: err.message})
+    }
+})
+
 export default router

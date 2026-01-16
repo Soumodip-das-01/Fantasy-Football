@@ -75,7 +75,7 @@ const CreatePlayerPage = () => {
         setMounted(true)
     }, [])
 
-
+    
     const fetchPlayers = async () => {
         try {
             const res = await fetch("http://localhost:5000/admin/players", {
@@ -98,6 +98,8 @@ const CreatePlayerPage = () => {
     useEffect(() => {
         fetchPlayers()
     }, [])
+    
+    if (!mounted) return null
 
     const handleCreatePlayer = async () => {
         if (!name || !position || !basePrice || !rating) {

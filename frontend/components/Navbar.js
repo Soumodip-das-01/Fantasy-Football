@@ -8,7 +8,7 @@ import CardNav from '@/components/CardNav';
 const items = [
     {
         label: "About",
-        bgColor: "#0D0716",
+        bgColor: "#271E37",
         textColor: "#fff",
         links: [
             { label: "Company", ariaLabel: "About Company", href: "/about/company" },
@@ -16,12 +16,12 @@ const items = [
         ],
     },
     {
-        label: "Contact",
+        label: "Auction",
         bgColor: "#271E37",
         textColor: "#fff",
         links: [
-            { label: "Email", ariaLabel: "Email us", href: "/contact/email" },
-            { label: "Twitter", ariaLabel: "Twitter", href: "/contact/twitter" },
+            { label: "Player Auction", ariaLabel: "To auction", href: "/admin/auction" },
+            
         ]
     },
     {
@@ -29,10 +29,8 @@ const items = [
         bgColor: "#271E37",
         textColor: "#fff",
         links: [
-            { label: "Forwards", ariaLabel: "To forwards list", href: "/players/forwards" },
-            { label: "Midfielders", ariaLabel: "To midfielders list", href: "/players/midfielders" },
-            { label: "Defenders", ariaLabel: "To defenders list", href: "/players/defenders" },
-            { label: "Goalkeepers", ariaLabel: "to goalkeepers list", href: "/players/goalkeepers" },
+            { label: "Create Playera And Player Database", ariaLabel: "To Playera", href: "/admin/players" },
+            
         ]
     },
     {
@@ -40,9 +38,7 @@ const items = [
         bgColor: "#271E37",
         textColor: "#fff",
         links: [
-            { label: "All teams", ariaLabel: "To All teams", href: "/teams/all" },
-            { label: "Current Tournament", ariaLabel: "To Current tournament", href: "/teams/current" },
-            { label: "Creat New team", ariaLabel: "To New Team Page", href: "/admin/team" },
+            { label: "Create Teams and Team database", ariaLabel: "To Create Team", href: "/admin/team" },
         ]
     },
 
